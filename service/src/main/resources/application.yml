@@ -3,6 +3,8 @@ server:
 
 
 spring:
+    application:
+      name: zeus
     datasource:
         name: mysql_test
         type: com.alibaba.druid.pool.DruidDataSource
@@ -12,9 +14,9 @@ spring:
           filters: stat
           driver-class-name: com.mysql.jdbc.Driver
           #基本属性
-          url: jdbc:mysql://192.168.10.139:3306/e_fmt?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+          url: jdbc:mysql://192.168.10.89:3306/zeus?useUnicode=true&characterEncoding=utf8&autoReconnect=true
           username: 66money
-          password: asdefg
+          password: 9cHDafV8BA
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -49,7 +51,7 @@ spring:
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
 mybatis:
   mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
-  type-aliases-package: com.winterchen.model  # 注意：对应实体类的路径
+  type-aliases-package: com.uusoft.test.zeus.domain.model  # 注意：对应实体类的路径
 
 #pagehelper
 pagehelper:

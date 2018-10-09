@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uusoft.test.zeus.dao.InterfaceParamsMapper">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    <id column="paramId" jdbcType="INTEGER" property="paramid" />
+    <result column="paramNameZH" jdbcType="VARCHAR" property="paramnamezh" />
+    <result column="paramNameEN" jdbcType="VARCHAR" property="paramnameen" />
+    <result column="paramType" jdbcType="VARCHAR" property="paramtype" />
+    <result column="mandatoryType" jdbcType="VARCHAR" property="mandatorytype" />
+    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
+    <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    paramId, paramNameZH, paramNameEN, paramType, mandatoryType, instruction, creatTime, 
+    updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interface_params
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interface_params
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    insert into interface_params (paramId, paramNameZH, paramNameEN, 
+      paramType, mandatoryType, instruction, 
+      creatTime, updateTime)
+    values (#{paramid,jdbcType=INTEGER}, #{paramnamezh,jdbcType=VARCHAR}, #{paramnameen,jdbcType=VARCHAR}, 
+      #{paramtype,jdbcType=VARCHAR}, #{mandatorytype,jdbcType=VARCHAR}, #{instruction,jdbcType=VARCHAR}, 
+      #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    insert into interface_params
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="paramid != null">
+        paramId,
+      </if>
+      <if test="paramnamezh != null">
+        paramNameZH,
+      </if>
+      <if test="paramnameen != null">
+        paramNameEN,
+      </if>
+      <if test="paramtype != null">
+        paramType,
+      </if>
+      <if test="mandatorytype != null">
+        mandatoryType,
+      </if>
+      <if test="instruction != null">
+        instruction,
+      </if>
+      <if test="creattime != null">
+        creatTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="paramid != null">
+        #{paramid,jdbcType=INTEGER},
+      </if>
+      <if test="paramnamezh != null">
+        #{paramnamezh,jdbcType=VARCHAR},
+      </if>
+      <if test="paramnameen != null">
+        #{paramnameen,jdbcType=VARCHAR},
+      </if>
+      <if test="paramtype != null">
+        #{paramtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mandatorytype != null">
+        #{mandatorytype,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null">
+        #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    update interface_params
+    <set>
+      <if test="paramnamezh != null">
+        paramNameZH = #{paramnamezh,jdbcType=VARCHAR},
+      </if>
+      <if test="paramnameen != null">
+        paramNameEN = #{paramnameen,jdbcType=VARCHAR},
+      </if>
+      <if test="paramtype != null">
+        paramType = #{paramtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mandatorytype != null">
+        mandatoryType = #{mandatorytype,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        instruction = #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null">
+        creatTime = #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    update interface_params
+    set paramNameZH = #{paramnamezh,jdbcType=VARCHAR},
+      paramNameEN = #{paramnameen,jdbcType=VARCHAR},
+      paramType = #{paramtype,jdbcType=VARCHAR},
+      mandatoryType = #{mandatorytype,jdbcType=VARCHAR},
+      instruction = #{instruction,jdbcType=VARCHAR},
+      creatTime = #{creattime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    <id column="paramId" jdbcType="INTEGER" property="paramid" />
+    <result column="paramNameZH" jdbcType="VARCHAR" property="paramnamezh" />
+    <result column="paramNameEN" jdbcType="VARCHAR" property="paramnameen" />
+    <result column="paramType" jdbcType="VARCHAR" property="paramtype" />
+    <result column="mandatoryType" jdbcType="VARCHAR" property="mandatorytype" />
+    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
+    <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    paramId, paramNameZH, paramNameEN, paramType, mandatoryType, instruction, creatTime, 
+    updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interface_params
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interface_params
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    insert into interface_params (paramId, paramNameZH, paramNameEN, 
+      paramType, mandatoryType, instruction, 
+      creatTime, updateTime)
+    values (#{paramid,jdbcType=INTEGER}, #{paramnamezh,jdbcType=VARCHAR}, #{paramnameen,jdbcType=VARCHAR}, 
+      #{paramtype,jdbcType=VARCHAR}, #{mandatorytype,jdbcType=VARCHAR}, #{instruction,jdbcType=VARCHAR}, 
+      #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    insert into interface_params
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="paramid != null">
+        paramId,
+      </if>
+      <if test="paramnamezh != null">
+        paramNameZH,
+      </if>
+      <if test="paramnameen != null">
+        paramNameEN,
+      </if>
+      <if test="paramtype != null">
+        paramType,
+      </if>
+      <if test="mandatorytype != null">
+        mandatoryType,
+      </if>
+      <if test="instruction != null">
+        instruction,
+      </if>
+      <if test="creattime != null">
+        creatTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="paramid != null">
+        #{paramid,jdbcType=INTEGER},
+      </if>
+      <if test="paramnamezh != null">
+        #{paramnamezh,jdbcType=VARCHAR},
+      </if>
+      <if test="paramnameen != null">
+        #{paramnameen,jdbcType=VARCHAR},
+      </if>
+      <if test="paramtype != null">
+        #{paramtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mandatorytype != null">
+        #{mandatorytype,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null">
+        #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    update interface_params
+    <set>
+      <if test="paramnamezh != null">
+        paramNameZH = #{paramnamezh,jdbcType=VARCHAR},
+      </if>
+      <if test="paramnameen != null">
+        paramNameEN = #{paramnameen,jdbcType=VARCHAR},
+      </if>
+      <if test="paramtype != null">
+        paramType = #{paramtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mandatorytype != null">
+        mandatoryType = #{mandatorytype,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        instruction = #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null">
+        creatTime = #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    update interface_params
+    set paramNameZH = #{paramnamezh,jdbcType=VARCHAR},
+      paramNameEN = #{paramnameen,jdbcType=VARCHAR},
+      paramType = #{paramtype,jdbcType=VARCHAR},
+      mandatoryType = #{mandatorytype,jdbcType=VARCHAR},
+      instruction = #{instruction,jdbcType=VARCHAR},
+      creatTime = #{creattime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    <id column="paramId" jdbcType="INTEGER" property="paramid" />
+    <result column="paramNameZH" jdbcType="VARCHAR" property="paramnamezh" />
+    <result column="paramNameEN" jdbcType="VARCHAR" property="paramnameen" />
+    <result column="paramType" jdbcType="VARCHAR" property="paramtype" />
+    <result column="mandatoryType" jdbcType="VARCHAR" property="mandatorytype" />
+    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
+    <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    paramId, paramNameZH, paramNameEN, paramType, mandatoryType, instruction, creatTime, 
+    updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interface_params
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interface_params
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    insert into interface_params (paramId, paramNameZH, paramNameEN, 
+      paramType, mandatoryType, instruction, 
+      creatTime, updateTime)
+    values (#{paramid,jdbcType=INTEGER}, #{paramnamezh,jdbcType=VARCHAR}, #{paramnameen,jdbcType=VARCHAR}, 
+      #{paramtype,jdbcType=VARCHAR}, #{mandatorytype,jdbcType=VARCHAR}, #{instruction,jdbcType=VARCHAR}, 
+      #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    insert into interface_params
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="paramid != null">
+        paramId,
+      </if>
+      <if test="paramnamezh != null">
+        paramNameZH,
+      </if>
+      <if test="paramnameen != null">
+        paramNameEN,
+      </if>
+      <if test="paramtype != null">
+        paramType,
+      </if>
+      <if test="mandatorytype != null">
+        mandatoryType,
+      </if>
+      <if test="instruction != null">
+        instruction,
+      </if>
+      <if test="creattime != null">
+        creatTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="paramid != null">
+        #{paramid,jdbcType=INTEGER},
+      </if>
+      <if test="paramnamezh != null">
+        #{paramnamezh,jdbcType=VARCHAR},
+      </if>
+      <if test="paramnameen != null">
+        #{paramnameen,jdbcType=VARCHAR},
+      </if>
+      <if test="paramtype != null">
+        #{paramtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mandatorytype != null">
+        #{mandatorytype,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null">
+        #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    update interface_params
+    <set>
+      <if test="paramnamezh != null">
+        paramNameZH = #{paramnamezh,jdbcType=VARCHAR},
+      </if>
+      <if test="paramnameen != null">
+        paramNameEN = #{paramnameen,jdbcType=VARCHAR},
+      </if>
+      <if test="paramtype != null">
+        paramType = #{paramtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mandatorytype != null">
+        mandatoryType = #{mandatorytype,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        instruction = #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null">
+        creatTime = #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceParams">
+    update interface_params
+    set paramNameZH = #{paramnamezh,jdbcType=VARCHAR},
+      paramNameEN = #{paramnameen,jdbcType=VARCHAR},
+      paramType = #{paramtype,jdbcType=VARCHAR},
+      mandatoryType = #{mandatorytype,jdbcType=VARCHAR},
+      instruction = #{instruction,jdbcType=VARCHAR},
+      creatTime = #{creattime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where paramId = #{paramid,jdbcType=INTEGER}
+  </update>
+</mapper>

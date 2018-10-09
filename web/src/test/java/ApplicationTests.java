@@ -1,3 +1,4 @@
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.SimpleMailMessage;
@@ -15,6 +16,7 @@ public class ApplicationTests {
   @Autowired
   private JavaMailSender mailSender;
 
+  @Test
   public void sendMailTest() {
 
     SimpleMailMessage message = new SimpleMailMessage();

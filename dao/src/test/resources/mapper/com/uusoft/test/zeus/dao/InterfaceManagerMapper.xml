@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uusoft.test.zeus.dao.InterfaceManagerMapper">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    <id column="interfaceId" jdbcType="INTEGER" property="interfaceid" />
+    <result column="interfaceName" jdbcType="VARCHAR" property="interfacename" />
+    <result column="inputParams" jdbcType="VARCHAR" property="inputparams" />
+    <result column="returnParams" jdbcType="VARCHAR" property="returnparams" />
+    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
+    <result column="encryption" jdbcType="INTEGER" property="encryption" />
+    <result column="interfaceType" jdbcType="INTEGER" property="interfacetype" />
+    <result column="appId" jdbcType="INTEGER" property="appid" />
+    <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    interfaceId, interfaceName, inputParams, returnParams, instruction, encryption, interfaceType, 
+    appId, creatTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interface_manager
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interface_manager
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    insert into interface_manager (interfaceId, interfaceName, inputParams, 
+      returnParams, instruction, encryption, 
+      interfaceType, appId, creatTime, 
+      updateTime)
+    values (#{interfaceid,jdbcType=INTEGER}, #{interfacename,jdbcType=VARCHAR}, #{inputparams,jdbcType=VARCHAR}, 
+      #{returnparams,jdbcType=VARCHAR}, #{instruction,jdbcType=VARCHAR}, #{encryption,jdbcType=INTEGER}, 
+      #{interfacetype,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{creattime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    insert into interface_manager
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="interfaceid != null">
+        interfaceId,
+      </if>
+      <if test="interfacename != null">
+        interfaceName,
+      </if>
+      <if test="inputparams != null">
+        inputParams,
+      </if>
+      <if test="returnparams != null">
+        returnParams,
+      </if>
+      <if test="instruction != null">
+        instruction,
+      </if>
+      <if test="encryption != null">
+        encryption,
+      </if>
+      <if test="interfacetype != null">
+        interfaceType,
+      </if>
+      <if test="appid != null">
+        appId,
+      </if>
+      <if test="creattime != null">
+        creatTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="interfaceid != null">
+        #{interfaceid,jdbcType=INTEGER},
+      </if>
+      <if test="interfacename != null">
+        #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="inputparams != null">
+        #{inputparams,jdbcType=VARCHAR},
+      </if>
+      <if test="returnparams != null">
+        #{returnparams,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="encryption != null">
+        #{encryption,jdbcType=INTEGER},
+      </if>
+      <if test="interfacetype != null">
+        #{interfacetype,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null">
+        #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="creattime != null">
+        #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    update interface_manager
+    <set>
+      <if test="interfacename != null">
+        interfaceName = #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="inputparams != null">
+        inputParams = #{inputparams,jdbcType=VARCHAR},
+      </if>
+      <if test="returnparams != null">
+        returnParams = #{returnparams,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        instruction = #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="encryption != null">
+        encryption = #{encryption,jdbcType=INTEGER},
+      </if>
+      <if test="interfacetype != null">
+        interfaceType = #{interfacetype,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null">
+        appId = #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="creattime != null">
+        creatTime = #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    update interface_manager
+    set interfaceName = #{interfacename,jdbcType=VARCHAR},
+      inputParams = #{inputparams,jdbcType=VARCHAR},
+      returnParams = #{returnparams,jdbcType=VARCHAR},
+      instruction = #{instruction,jdbcType=VARCHAR},
+      encryption = #{encryption,jdbcType=INTEGER},
+      interfaceType = #{interfacetype,jdbcType=INTEGER},
+      appId = #{appid,jdbcType=INTEGER},
+      creatTime = #{creattime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    <id column="interfaceId" jdbcType="INTEGER" property="interfaceid" />
+    <result column="interfaceName" jdbcType="VARCHAR" property="interfacename" />
+    <result column="inputParams" jdbcType="VARCHAR" property="inputparams" />
+    <result column="returnParams" jdbcType="VARCHAR" property="returnparams" />
+    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
+    <result column="encryption" jdbcType="INTEGER" property="encryption" />
+    <result column="interfaceType" jdbcType="INTEGER" property="interfacetype" />
+    <result column="appId" jdbcType="INTEGER" property="appid" />
+    <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    interfaceId, interfaceName, inputParams, returnParams, instruction, encryption, interfaceType, 
+    appId, creatTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interface_manager
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interface_manager
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    insert into interface_manager (interfaceId, interfaceName, inputParams, 
+      returnParams, instruction, encryption, 
+      interfaceType, appId, creatTime, 
+      updateTime)
+    values (#{interfaceid,jdbcType=INTEGER}, #{interfacename,jdbcType=VARCHAR}, #{inputparams,jdbcType=VARCHAR}, 
+      #{returnparams,jdbcType=VARCHAR}, #{instruction,jdbcType=VARCHAR}, #{encryption,jdbcType=INTEGER}, 
+      #{interfacetype,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{creattime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    insert into interface_manager
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="interfaceid != null">
+        interfaceId,
+      </if>
+      <if test="interfacename != null">
+        interfaceName,
+      </if>
+      <if test="inputparams != null">
+        inputParams,
+      </if>
+      <if test="returnparams != null">
+        returnParams,
+      </if>
+      <if test="instruction != null">
+        instruction,
+      </if>
+      <if test="encryption != null">
+        encryption,
+      </if>
+      <if test="interfacetype != null">
+        interfaceType,
+      </if>
+      <if test="appid != null">
+        appId,
+      </if>
+      <if test="creattime != null">
+        creatTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="interfaceid != null">
+        #{interfaceid,jdbcType=INTEGER},
+      </if>
+      <if test="interfacename != null">
+        #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="inputparams != null">
+        #{inputparams,jdbcType=VARCHAR},
+      </if>
+      <if test="returnparams != null">
+        #{returnparams,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="encryption != null">
+        #{encryption,jdbcType=INTEGER},
+      </if>
+      <if test="interfacetype != null">
+        #{interfacetype,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null">
+        #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="creattime != null">
+        #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    update interface_manager
+    <set>
+      <if test="interfacename != null">
+        interfaceName = #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="inputparams != null">
+        inputParams = #{inputparams,jdbcType=VARCHAR},
+      </if>
+      <if test="returnparams != null">
+        returnParams = #{returnparams,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        instruction = #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="encryption != null">
+        encryption = #{encryption,jdbcType=INTEGER},
+      </if>
+      <if test="interfacetype != null">
+        interfaceType = #{interfacetype,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null">
+        appId = #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="creattime != null">
+        creatTime = #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    update interface_manager
+    set interfaceName = #{interfacename,jdbcType=VARCHAR},
+      inputParams = #{inputparams,jdbcType=VARCHAR},
+      returnParams = #{returnparams,jdbcType=VARCHAR},
+      instruction = #{instruction,jdbcType=VARCHAR},
+      encryption = #{encryption,jdbcType=INTEGER},
+      interfaceType = #{interfacetype,jdbcType=INTEGER},
+      appId = #{appid,jdbcType=INTEGER},
+      creatTime = #{creattime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    <id column="interfaceId" jdbcType="INTEGER" property="interfaceid" />
+    <result column="interfaceName" jdbcType="VARCHAR" property="interfacename" />
+    <result column="inputParams" jdbcType="VARCHAR" property="inputparams" />
+    <result column="returnParams" jdbcType="VARCHAR" property="returnparams" />
+    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
+    <result column="encryption" jdbcType="INTEGER" property="encryption" />
+    <result column="interfaceType" jdbcType="INTEGER" property="interfacetype" />
+    <result column="appId" jdbcType="INTEGER" property="appid" />
+    <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    interfaceId, interfaceName, inputParams, returnParams, instruction, encryption, interfaceType, 
+    appId, creatTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from interface_manager
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interface_manager
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    insert into interface_manager (interfaceId, interfaceName, inputParams, 
+      returnParams, instruction, encryption, 
+      interfaceType, appId, creatTime, 
+      updateTime)
+    values (#{interfaceid,jdbcType=INTEGER}, #{interfacename,jdbcType=VARCHAR}, #{inputparams,jdbcType=VARCHAR}, 
+      #{returnparams,jdbcType=VARCHAR}, #{instruction,jdbcType=VARCHAR}, #{encryption,jdbcType=INTEGER}, 
+      #{interfacetype,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{creattime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    insert into interface_manager
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="interfaceid != null">
+        interfaceId,
+      </if>
+      <if test="interfacename != null">
+        interfaceName,
+      </if>
+      <if test="inputparams != null">
+        inputParams,
+      </if>
+      <if test="returnparams != null">
+        returnParams,
+      </if>
+      <if test="instruction != null">
+        instruction,
+      </if>
+      <if test="encryption != null">
+        encryption,
+      </if>
+      <if test="interfacetype != null">
+        interfaceType,
+      </if>
+      <if test="appid != null">
+        appId,
+      </if>
+      <if test="creattime != null">
+        creatTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="interfaceid != null">
+        #{interfaceid,jdbcType=INTEGER},
+      </if>
+      <if test="interfacename != null">
+        #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="inputparams != null">
+        #{inputparams,jdbcType=VARCHAR},
+      </if>
+      <if test="returnparams != null">
+        #{returnparams,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="encryption != null">
+        #{encryption,jdbcType=INTEGER},
+      </if>
+      <if test="interfacetype != null">
+        #{interfacetype,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null">
+        #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="creattime != null">
+        #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    update interface_manager
+    <set>
+      <if test="interfacename != null">
+        interfaceName = #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="inputparams != null">
+        inputParams = #{inputparams,jdbcType=VARCHAR},
+      </if>
+      <if test="returnparams != null">
+        returnParams = #{returnparams,jdbcType=VARCHAR},
+      </if>
+      <if test="instruction != null">
+        instruction = #{instruction,jdbcType=VARCHAR},
+      </if>
+      <if test="encryption != null">
+        encryption = #{encryption,jdbcType=INTEGER},
+      </if>
+      <if test="interfacetype != null">
+        interfaceType = #{interfacetype,jdbcType=INTEGER},
+      </if>
+      <if test="appid != null">
+        appId = #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="creattime != null">
+        creatTime = #{creattime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+    update interface_manager
+    set interfaceName = #{interfacename,jdbcType=VARCHAR},
+      inputParams = #{inputparams,jdbcType=VARCHAR},
+      returnParams = #{returnparams,jdbcType=VARCHAR},
+      instruction = #{instruction,jdbcType=VARCHAR},
+      encryption = #{encryption,jdbcType=INTEGER},
+      interfaceType = #{interfacetype,jdbcType=INTEGER},
+      appId = #{appid,jdbcType=INTEGER},
+      creatTime = #{creattime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where interfaceId = #{interfaceid,jdbcType=INTEGER}
+  </update>
+</mapper>
