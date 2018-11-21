@@ -1,4 +1,4 @@
-package com.uusoft.test.service.cofiguration;
+package com.uusoft.test.cofiguration;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import java.sql.SQLException;
