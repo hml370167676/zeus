@@ -1,8 +1,11 @@
 package com.uusoft.test.zeus.domain.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class InterfaceManager implements Serializable {
     private Integer interfaceid;
 
@@ -26,7 +29,7 @@ public class InterfaceManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getInterfaceid() {
+/*    public Integer getInterfaceid() {
         return interfaceid;
     }
 
@@ -125,5 +128,5 @@ public class InterfaceManager implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
-    }
+    }*/
 }

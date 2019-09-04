@@ -1,8 +1,11 @@
 package com.uusoft.test.zeus.domain.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class AppManager implements Serializable {
     private Integer appid;
 
@@ -14,7 +17,7 @@ public class AppManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getAppid() {
+   /* public Integer getAppid() {
         return appid;
     }
 
@@ -59,5 +62,5 @@ public class AppManager implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
-    }
+    }*/
 }

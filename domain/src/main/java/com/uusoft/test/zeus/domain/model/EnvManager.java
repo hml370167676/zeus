@@ -1,8 +1,11 @@
 package com.uusoft.test.zeus.domain.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class EnvManager implements Serializable {
     private Integer envid;
 
@@ -16,7 +19,7 @@ public class EnvManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getEnvid() {
+/*    public Integer getEnvid() {
         return envid;
     }
 
@@ -70,5 +73,5 @@ public class EnvManager implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
-    }
+    }*/
 }

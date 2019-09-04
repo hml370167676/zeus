@@ -1,8 +1,11 @@
 package com.uusoft.test.zeus.domain.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class InterfaceParams implements Serializable {
     private Integer paramid;
 
@@ -22,7 +25,7 @@ public class InterfaceParams implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getParamid() {
+  /*  public Integer getParamid() {
         return paramid;
     }
 
@@ -103,5 +106,5 @@ public class InterfaceParams implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
-    }
+    }*/
 }
