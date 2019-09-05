@@ -1,7 +1,11 @@
 server:
   port: 8080
-
-
+eureka:
+  client:
+    initialInstanceInfoReplicationIntervalSeconds: 3
+    registry-fetch-interval-seconds: 15
+    serviceUrl:
+      defaultZone: http://192.168.4.106:8601/eureka/
 spring:
     application:
       name: zeus
@@ -15,8 +19,8 @@ spring:
           driver-class-name: com.mysql.jdbc.Driver
           #基本属性
           url: jdbc:mysql://192.168.10.89:3306/zeus?useUnicode=true&characterEncoding=utf8&autoReconnect=true
-          username: 66money
-          password: 9cHDafV8BA
+          username: username
+          password: password
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1

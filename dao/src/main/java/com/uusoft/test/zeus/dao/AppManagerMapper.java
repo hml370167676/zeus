@@ -1,6 +1,6 @@
 package com.uusoft.test.zeus.dao;
 
-import com.uusoft.test.zeus.domain.model.AppManager;
+import com.uusoft.test.zeus.entity.model.AppManager;
 
 public interface AppManagerMapper {
     int deleteByPrimaryKey(Integer appid);

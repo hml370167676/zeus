@@ -1,6 +1,6 @@
 package com.uusoft.test.zeus.dao;
 
-import com.uusoft.test.zeus.domain.model.InterfaceManager;
+import com.uusoft.test.zeus.entity.model.InterfaceManager;
 
 public interface InterfaceManagerMapper {
     int deleteByPrimaryKey(Integer interfaceid);

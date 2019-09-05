@@ -1,7 +1,7 @@
 package com.uusoft.test.service.impl;
 
 import com.uusoft.test.service.AppManagerService;
-import com.uusoft.test.zeus.domain.model.AppManager;
+import com.uusoft.test.zeus.entity.model.AppManager;
 import javax.annotation.Resource;
 
 /**

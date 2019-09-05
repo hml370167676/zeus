@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.uusoft.test.zeus.dao.AppManagerMapper">
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.AppManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.AppManager">
     <id column="appId" jdbcType="INTEGER" property="appid" />
     <result column="appName" jdbcType="VARCHAR" property="appname" />
     <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
@@ -20,13 +20,13 @@
     delete from app_manager
     where appId = #{appid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     insert into app_manager (appId, appName, creatTime, 
       updateTime)
     values (#{appid,jdbcType=INTEGER}, #{appname,jdbcType=VARCHAR}, #{creattime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     insert into app_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="appid != null">
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     update app_manager
     <set>
       <if test="appname != null">
@@ -72,14 +72,14 @@
     </set>
     where appId = #{appid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     update app_manager
     set appName = #{appname,jdbcType=VARCHAR},
       creatTime = #{creattime,jdbcType=TIMESTAMP},
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where appId = #{appid,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.AppManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.AppManager">
     <id column="appId" jdbcType="INTEGER" property="appid" />
     <result column="appName" jdbcType="VARCHAR" property="appname" />
     <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
@@ -98,13 +98,13 @@
     delete from app_manager
     where appId = #{appid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     insert into app_manager (appId, appName, creatTime, 
       updateTime)
     values (#{appid,jdbcType=INTEGER}, #{appname,jdbcType=VARCHAR}, #{creattime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     insert into app_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="appid != null">
@@ -135,7 +135,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     update app_manager
     <set>
       <if test="appname != null">
@@ -150,14 +150,14 @@
     </set>
     where appId = #{appid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     update app_manager
     set appName = #{appname,jdbcType=VARCHAR},
       creatTime = #{creattime,jdbcType=TIMESTAMP},
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where appId = #{appid,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.AppManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.AppManager">
     <id column="appId" jdbcType="INTEGER" property="appid" />
     <result column="appName" jdbcType="VARCHAR" property="appname" />
     <result column="creatTime" jdbcType="TIMESTAMP" property="creattime" />
@@ -176,13 +176,13 @@
     delete from app_manager
     where appId = #{appid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     insert into app_manager (appId, appName, creatTime, 
       updateTime)
     values (#{appid,jdbcType=INTEGER}, #{appname,jdbcType=VARCHAR}, #{creattime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     insert into app_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="appid != null">
@@ -213,7 +213,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     update app_manager
     <set>
       <if test="appname != null">
@@ -228,7 +228,7 @@
     </set>
     where appId = #{appid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.AppManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.AppManager">
     update app_manager
     set appName = #{appname,jdbcType=VARCHAR},
       creatTime = #{creattime,jdbcType=TIMESTAMP},

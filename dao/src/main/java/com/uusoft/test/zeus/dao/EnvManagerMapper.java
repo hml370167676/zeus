@@ -1,6 +1,6 @@
 package com.uusoft.test.zeus.dao;
 
-import com.uusoft.test.zeus.domain.model.EnvManager;
+import com.uusoft.test.zeus.entity.model.EnvManager;
 
 public interface EnvManagerMapper {
     int deleteByPrimaryKey(Integer envid);

@@ -1,6 +1,6 @@
 package com.uusoft.test.zeus.dao;
 
-import com.uusoft.test.zeus.domain.model.InterfaceParams;
+import com.uusoft.test.zeus.entity.model.InterfaceParams;
 
 public interface InterfaceParamsMapper {
     int deleteByPrimaryKey(Integer paramid);

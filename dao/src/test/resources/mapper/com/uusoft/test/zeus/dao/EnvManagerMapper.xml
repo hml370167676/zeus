@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.uusoft.test.zeus.dao.EnvManagerMapper">
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.EnvManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.EnvManager">
     <id column="envId" jdbcType="INTEGER" property="envid" />
     <result column="envName" jdbcType="VARCHAR" property="envname" />
     <result column="envUrl" jdbcType="VARCHAR" property="envurl" />
@@ -21,13 +21,13 @@
     delete from env_manager
     where envId = #{envid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     insert into env_manager (envId, envName, envUrl, 
       creatTime, updateTime)
     values (#{envid,jdbcType=INTEGER}, #{envname,jdbcType=VARCHAR}, #{envurl,jdbcType=VARCHAR}, 
       #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     insert into env_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="envid != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     update env_manager
     <set>
       <if test="envname != null">
@@ -82,7 +82,7 @@
     </set>
     where envId = #{envid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     update env_manager
     set envName = #{envname,jdbcType=VARCHAR},
       envUrl = #{envurl,jdbcType=VARCHAR},
@@ -90,7 +90,7 @@
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where envId = #{envid,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.EnvManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.EnvManager">
     <id column="envId" jdbcType="INTEGER" property="envid" />
     <result column="envName" jdbcType="VARCHAR" property="envname" />
     <result column="envUrl" jdbcType="VARCHAR" property="envurl" />
@@ -110,13 +110,13 @@
     delete from env_manager
     where envId = #{envid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     insert into env_manager (envId, envName, envUrl, 
       creatTime, updateTime)
     values (#{envid,jdbcType=INTEGER}, #{envname,jdbcType=VARCHAR}, #{envurl,jdbcType=VARCHAR}, 
       #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     insert into env_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="envid != null">
@@ -153,7 +153,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     update env_manager
     <set>
       <if test="envname != null">
@@ -171,7 +171,7 @@
     </set>
     where envId = #{envid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     update env_manager
     set envName = #{envname,jdbcType=VARCHAR},
       envUrl = #{envurl,jdbcType=VARCHAR},
@@ -179,7 +179,7 @@
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where envId = #{envid,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.EnvManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.EnvManager">
     <id column="envId" jdbcType="INTEGER" property="envid" />
     <result column="envName" jdbcType="VARCHAR" property="envname" />
     <result column="envUrl" jdbcType="VARCHAR" property="envurl" />
@@ -199,13 +199,13 @@
     delete from env_manager
     where envId = #{envid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     insert into env_manager (envId, envName, envUrl, 
       creatTime, updateTime)
     values (#{envid,jdbcType=INTEGER}, #{envname,jdbcType=VARCHAR}, #{envurl,jdbcType=VARCHAR}, 
       #{creattime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     insert into env_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="envid != null">
@@ -242,7 +242,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     update env_manager
     <set>
       <if test="envname != null">
@@ -260,7 +260,7 @@
     </set>
     where envId = #{envid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.EnvManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.EnvManager">
     update env_manager
     set envName = #{envname,jdbcType=VARCHAR},
       envUrl = #{envurl,jdbcType=VARCHAR},

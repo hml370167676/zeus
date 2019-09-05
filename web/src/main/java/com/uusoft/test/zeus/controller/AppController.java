@@ -1,6 +1,6 @@
 package com.uusoft.test.zeus.controller;
 
-import com.uusoft.test.zeus.domain.model.AppManager;
+import com.uusoft.test.zeus.entity.model.AppManager;
 import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

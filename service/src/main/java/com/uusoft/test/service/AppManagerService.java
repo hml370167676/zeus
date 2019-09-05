@@ -1,7 +1,5 @@
 package com.uusoft.test.service;
 
-import com.uusoft.test.zeus.domain.model.AppManager;
-import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 /**

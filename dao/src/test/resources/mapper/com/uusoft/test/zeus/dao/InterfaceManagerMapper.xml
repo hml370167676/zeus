@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.uusoft.test.zeus.dao.InterfaceManagerMapper">
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.InterfaceManager">
     <id column="interfaceId" jdbcType="INTEGER" property="interfaceid" />
     <result column="interfaceName" jdbcType="VARCHAR" property="interfacename" />
     <result column="inputParams" jdbcType="VARCHAR" property="inputparams" />
@@ -27,7 +27,7 @@
     delete from interface_manager
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     insert into interface_manager (interfaceId, interfaceName, inputParams, 
       returnParams, instruction, encryption, 
       interfaceType, appId, creatTime, 
@@ -37,7 +37,7 @@
       #{interfacetype,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{creattime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     insert into interface_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="interfaceid != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     update interface_manager
     <set>
       <if test="interfacename != null">
@@ -137,7 +137,7 @@
     </set>
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     update interface_manager
     set interfaceName = #{interfacename,jdbcType=VARCHAR},
       inputParams = #{inputparams,jdbcType=VARCHAR},
@@ -150,7 +150,7 @@
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.InterfaceManager">
     <id column="interfaceId" jdbcType="INTEGER" property="interfaceid" />
     <result column="interfaceName" jdbcType="VARCHAR" property="interfacename" />
     <result column="inputParams" jdbcType="VARCHAR" property="inputparams" />
@@ -176,7 +176,7 @@
     delete from interface_manager
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     insert into interface_manager (interfaceId, interfaceName, inputParams, 
       returnParams, instruction, encryption, 
       interfaceType, appId, creatTime, 
@@ -186,7 +186,7 @@
       #{interfacetype,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{creattime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     insert into interface_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="interfaceid != null">
@@ -253,7 +253,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     update interface_manager
     <set>
       <if test="interfacename != null">
@@ -286,7 +286,7 @@
     </set>
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     update interface_manager
     set interfaceName = #{interfacename,jdbcType=VARCHAR},
       inputParams = #{inputparams,jdbcType=VARCHAR},
@@ -299,7 +299,7 @@
       updateTime = #{updatetime,jdbcType=TIMESTAMP}
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <resultMap id="BaseResultMap" type="com.uusoft.test.zeus.entity.model.InterfaceManager">
     <id column="interfaceId" jdbcType="INTEGER" property="interfaceid" />
     <result column="interfaceName" jdbcType="VARCHAR" property="interfacename" />
     <result column="inputParams" jdbcType="VARCHAR" property="inputparams" />
@@ -325,7 +325,7 @@
     delete from interface_manager
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <insert id="insert" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     insert into interface_manager (interfaceId, interfaceName, inputParams, 
       returnParams, instruction, encryption, 
       interfaceType, appId, creatTime, 
@@ -335,7 +335,7 @@
       #{interfacetype,jdbcType=INTEGER}, #{appid,jdbcType=INTEGER}, #{creattime,jdbcType=TIMESTAMP}, 
       #{updatetime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <insert id="insertSelective" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     insert into interface_manager
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="interfaceid != null">
@@ -402,7 +402,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <update id="updateByPrimaryKeySelective" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     update interface_manager
     <set>
       <if test="interfacename != null">
@@ -435,7 +435,7 @@
     </set>
     where interfaceId = #{interfaceid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.domain.model.InterfaceManager">
+  <update id="updateByPrimaryKey" parameterType="com.uusoft.test.zeus.entity.model.InterfaceManager">
     update interface_manager
     set interfaceName = #{interfacename,jdbcType=VARCHAR},
       inputParams = #{inputparams,jdbcType=VARCHAR},
